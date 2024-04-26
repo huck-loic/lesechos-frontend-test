@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prepare": "panda codegen",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -16,6 +17,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.37.2",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20",
     "@types/react": "^18",
