@@ -1,5 +1,4 @@
 import { Source_Sans_3, Merriweather } from "next/font/google";
-import type { Metadata } from "next";
 
 import "./globals.css";
 
@@ -15,12 +14,6 @@ const merriweather = Merriweather({
   variable: "--font-serif",
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "Newsletters",
-  description:
-    "Dans cette page, vous retrouvez l’ensemble des newsletters des Echos et des marques satellites. Ainsi, vous pouvez découvrir toutes nos newsletters selon vos centres d’intérêt et gérer plus facilement l’inscription à vos newsletters.",
-};
 
 export default function RootLayout({
   children,
