@@ -1,6 +1,8 @@
 import { groupNewslettersBySite } from "@/services/transforms/group-newsletters-by-site";
 
 import type { NewslettersForUser } from "@/services/get-newsletters-for-user";
+import { Container } from "styled-system/jsx";
+import Heading from "@/components/atoms/Heading";
 
 type NewslettersListProps = {
   newsletters: NewslettersForUser;
@@ -10,10 +12,12 @@ export default function NewslettersList({ newsletters }: NewslettersListProps) {
   const sites = groupNewslettersBySite(newsletters);
 
   return (
-    <>
+    <Container maxWidth="breakpoint-lg">
       {sites.map((site, index) => (
         <section key={index}>
-          <h2>{site.name}</h2>
+          <Heading level="h2" intent="group">
+            {site.name}
+          </Heading>
           <div>
             {site.items.map((item) => (
               <div key={item.id}>
@@ -24,6 +28,6 @@ export default function NewslettersList({ newsletters }: NewslettersListProps) {
           </div>
         </section>
       ))}
-    </>
+    </Container>
   );
 }
