@@ -18,15 +18,19 @@
   },
   "devDependencies": {
     "@pandacss/dev": "^0.37.2",
+    "@testing-library/react": "^15.0.4",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
+    "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
+    "jsdom": "^24.0.0",
     "prettier": "^3.2.5",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^1.5.2"
   }
 }
