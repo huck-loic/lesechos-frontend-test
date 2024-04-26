@@ -1,8 +1,12 @@
 import { groupNewslettersBySite } from "@/services/transforms/group-newsletters-by-site";
-
-import type { NewslettersForUser } from "@/services/get-newsletters-for-user";
+import { css } from "styled-system/css";
 import { Container } from "styled-system/jsx";
 import Heading from "@/components/atoms/Heading";
+
+import type { NewslettersForUser } from "@/services/get-newsletters-for-user";
+import Card from "@/components/molecules/Card";
+import NewsletterImage from "@/components/molecules/NewsletterImage";
+import NewsletterGrid from "@/components/molecules/NewsletterGrid";
 
 type NewslettersListProps = {
   newsletters: NewslettersForUser;
@@ -13,19 +17,23 @@ export default function NewslettersList({ newsletters }: NewslettersListProps) {
 
   return (
     <Container maxWidth="breakpoint-lg">
-      {sites.map((site, index) => (
-        <section key={index}>
+      {sites.map((site) => (
+        <section key={site.name} className={css({ marginBottom: 8 })}>
           <Heading level="h2" intent="group">
             {site.name}
           </Heading>
-          <div>
+          <NewsletterGrid>
             {site.items.map((item) => (
-              <div key={item.id}>
-                <h3>{item.title}</h3>
+              <Card key={item.id}>
+                <NewsletterImage src={item.image} alt={item.title}>
+                  <Heading level="h3" intent="newsletter">
+                    {item.title}
+                  </Heading>
+                </NewsletterImage>
                 <p>{item.description}</p>
-              </div>
+              </Card>
             ))}
-          </div>
+          </NewsletterGrid>
         </section>
       ))}
     </Container>
