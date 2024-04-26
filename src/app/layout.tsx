@@ -5,13 +5,13 @@ import "./globals.css";
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-sans",
+  variable: "--fonts-sans",
   display: "swap",
 });
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["700"],
-  variable: "--font-serif",
+  variable: "--fonts-serif",
   display: "swap",
 });
 
