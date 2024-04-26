@@ -1,6 +1,17 @@
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
+  theme: {
+    extend: {
+      tokens: {
+        fonts: {
+          sans: { value: "var(--font-sans), sans-serif" },
+          serif: { value: "var(--font-serif), serif" },
+        },
+      },
+    },
+  },
+
   // Whether to use css reset
   preflight: true,
 

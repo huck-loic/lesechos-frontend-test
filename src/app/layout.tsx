@@ -1,8 +1,19 @@
-import { Inter } from "next/font/google";
+import { Source_Sans_3, Merriweather } from "next/font/google";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -10,8 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="fr">
+      <body
+        className={`${sourceSans.className} ${sourceSans.variable} ${merriweather.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
