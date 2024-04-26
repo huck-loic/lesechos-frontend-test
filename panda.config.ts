@@ -8,12 +8,20 @@ export default defineConfig({
           sans: { value: "var(--font-sans), sans-serif" },
           serif: { value: "var(--font-serif), serif" },
         },
+        colors: {
+          primary: { value: "#B00005" },
+          subscription: { value: "#FAEC70" },
+          neutralMicroContrast: { value: "#F4F4F4" },
+          neutralHighContrast: { value: "#FAEC70" },
+          white: { value: "#FFFFFF" },
+        },
       },
     },
   },
 
   // Whether to use css reset
   preflight: true,
+  jsxFramework: "react",
 
   // Where to look for your css declarations
   include: [
