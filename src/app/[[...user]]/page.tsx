@@ -5,6 +5,7 @@
  * but more usefull for services/utilities/library. Server component by default
  */
 
+import NewslettersList from "@/components/organisms/NewsletterList";
 import { getNewslettersForUser } from "@/services/get-newsletters-for-user";
 
 type PageParams = {
@@ -20,7 +21,7 @@ export default async function Page({ params }: PageParams) {
 
   return (
     <>
-      <pre>{JSON.stringify(newsletters)}</pre>
+      <NewslettersList newsletters={newsletters}></NewslettersList>
     </>
   );
 }

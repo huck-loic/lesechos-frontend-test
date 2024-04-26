@@ -17,3 +17,7 @@ export async function getNewslettersForUser(userType?: string) {
       newsletter.subscriptions.some(userHasSubscriptionRights),
   }));
 }
+
+export type NewslettersForUser = Awaited<
+  ReturnType<typeof getNewslettersForUser>
+>;

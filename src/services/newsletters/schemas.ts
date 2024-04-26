@@ -11,3 +11,6 @@ export const newsletterSchema = z.object({
 });
 
 export const newsletterItemsSchema = z.array(newsletterSchema);
+
+export type Newsletter = z.infer<typeof newsletterSchema>;
+export type NewsletterItems = z.infer<typeof newsletterSchema>;

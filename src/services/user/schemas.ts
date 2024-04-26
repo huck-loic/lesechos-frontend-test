@@ -9,3 +9,5 @@ export const userSchema = z.object({
   email: z.string(),
   subscriptions: z.array(z.string()),
 });
+
+export type User = z.infer<typeof userSchema>;
