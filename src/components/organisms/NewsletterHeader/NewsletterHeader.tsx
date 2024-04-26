@@ -18,7 +18,8 @@ const header = css({
     marginY: 4,
   },
   lg: {
-    marginY: 8,
+    marginTop: 8,
+    marginBottom: 6,
   },
 });
 
