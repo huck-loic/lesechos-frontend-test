@@ -5,8 +5,7 @@
  * but more usefull for services/utilities/library. Server component by default
  */
 
-import { getNewsletterItems } from "@/services/newsletters/queries";
-import { getUser } from "@/services/user/queries";
+import { getNewslettersForUser } from "@/services/get-newsletters-for-user";
 
 type PageParams = {
   params: {
@@ -17,14 +16,11 @@ type PageParams = {
 export default async function Page({ params }: PageParams) {
   const userType =
     typeof params.user !== "undefined" ? params.user.pop() : undefined;
-
-  const newsletters = await getNewsletterItems();
-  const user = await getUser(userType);
+  const newsletters = await getNewslettersForUser(userType);
 
   return (
     <>
       <pre>{JSON.stringify(newsletters)}</pre>
-      <pre>{JSON.stringify(user)}</pre>
     </>
   );
 }
