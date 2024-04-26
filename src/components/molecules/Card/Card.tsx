@@ -9,6 +9,7 @@ const cardStyle = css({
     width: "100%",
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
     gap: 4,
     minWidth: 0,
     textAlign: "center",

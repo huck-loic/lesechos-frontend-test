@@ -11,6 +11,7 @@ type NewsletterImageProps = PropsWithChildren<{
 const wrapperStyle = css({
   base: {
     position: "relative",
+    width: "100%",
     color: "white",
   },
 });

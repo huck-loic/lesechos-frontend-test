@@ -7,6 +7,7 @@ import type { NewslettersForUser } from "@/services/get-newsletters-for-user";
 import Card from "@/components/molecules/Card";
 import NewsletterImage from "@/components/molecules/NewsletterImage";
 import NewsletterGrid from "@/components/molecules/NewsletterGrid";
+import NewsletterButton from "@/components/atoms/NewsletterButton";
 
 type NewslettersListProps = {
   newsletters: NewslettersForUser;
@@ -31,6 +32,9 @@ export default function NewslettersList({ newsletters }: NewslettersListProps) {
                   </Heading>
                 </NewsletterImage>
                 <p>{item.description}</p>
+                <NewsletterButton
+                  hasSubscription={item.hasSubscriptionRights}
+                />
               </Card>
             ))}
           </NewsletterGrid>
