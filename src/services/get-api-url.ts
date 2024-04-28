@@ -1,3 +1,4 @@
 export function getApiUrl(path: string) {
-  return `http://localhost:3000/api${path}`;
+  const base = process.env.PUBLIC_API_URL ?? "http://localhost:3000/api";
+  return base + path;
 }
