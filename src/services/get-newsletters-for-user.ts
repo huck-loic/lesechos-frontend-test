@@ -7,6 +7,7 @@ export async function getNewslettersForUser(userType?: string) {
     getUser(userType),
   ]);
 
+  //TODO: Separate to transforms and test
   const userSubscriptions = new Set(user.subscriptions);
   const userHasSubscriptionRights = (subscription: string) =>
     userSubscriptions.has(subscription);

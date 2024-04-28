@@ -5,8 +5,8 @@ import Heading from "@/components/atoms/Heading";
 
 import type { NewslettersForUser } from "@/services/get-newsletters-for-user";
 import Card from "@/components/molecules/Card";
-import NewsletterImage from "@/components/molecules/NewsletterImage";
-import NewsletterGrid from "@/components/molecules/NewsletterGrid";
+import NewsletterImage from "@/components/atoms/NewsletterImage";
+import NewsletterGrid from "@/components/atoms/NewsletterGrid";
 import NewsletterButton from "@/components/atoms/NewsletterButton";
 
 type NewslettersListProps = {
