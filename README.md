@@ -1,10 +1,13 @@
 # Deployement
 
 The test is deployed on :
+
 https://lesechos-frontend-test.vercel.app
 
-The two other user views are visible on
+The two other user views are visible on : 
+
 https://lesechos-frontend-test.vercel.app/one
+
 https://lesechos-frontend-test.vercel.app/multiple
 
 # Getting started
