@@ -1,3 +1,12 @@
+# Deployement
+
+The test is deployed on :
+https://lesechos-frontend-test.vercel.app
+
+The two other user views are visible on
+https://lesechos-frontend-test.vercel.app/one
+https://lesechos-frontend-test.vercel.app/multiple
+
 # Getting started
 
 Hello there, you are a new recruit in our frontend team at Les Echos, and your first task is to implement our newsletter page.
