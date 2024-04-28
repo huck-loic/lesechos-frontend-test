@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import { toggleFollow } from "@/services/follow/actions";
 import Button from "../Button";
 
 type NewsletterButtonProps = {
@@ -11,20 +12,43 @@ export default function NewsletterButton({
   hasSubscription,
 }: NewsletterButtonProps) {
   const [follow, setFollow] = useState(false);
+  const [isLoading, startFollow] = useTransition();
 
   function handleFollow() {
-    if (!hasSubscription) {
+    if (isLoading) {
       return;
     }
 
-    setFollow(!follow);
+    if (!hasSubscription) {
+      // TODO: Replace with a polymophic button/link
+      window.location.href = "https://abonnement.lesechos.fr/";
+      return;
+    }
+
+    startFollow(async () => {
+      const newFollowState = await toggleFollow(follow);
+      setFollow(newFollowState);
+    });
   }
 
+  // TODO: Refactor to be more readable
+  const label = follow
+    ? "Se désincrire"
+    : hasSubscription
+      ? "S'inscrire"
+      : "S'abonner";
+
+  const intent = isLoading
+    ? undefined
+    : follow
+      ? "unfollow"
+      : hasSubscription
+        ? "follow"
+        : "subscribe";
+
   return (
-    <Button
-      onClick={handleFollow}
-      intent={hasSubscription ? "follow" : "subscribe"}>
-      {hasSubscription ? "S'inscrire" : "S'abonner"}
+    <Button onClick={handleFollow} intent={intent} isLoading={isLoading}>
+      {label}
     </Button>
   );
 }

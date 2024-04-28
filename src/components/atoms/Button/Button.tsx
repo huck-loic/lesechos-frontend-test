@@ -1,23 +1,27 @@
 "use client";
 
-import { cva } from "styled-system/css";
+import { cva, css } from "styled-system/css";
 
 import type { PropsWithChildren } from "react";
 import type { RecipeVariantProps } from "styled-system/css";
+import Loader from "../Loader";
 
 type ButtonVariant = RecipeVariantProps<typeof buttonVariant>;
 
 type ButtonProps = PropsWithChildren<
   {
     onClick: () => void;
+    isLoading: boolean;
   } & ButtonVariant
 >;
 
 const buttonVariant = cva({
   base: {
-    paddingX: 8,
-    paddingY: 2,
+    position: "relative",
+    paddingX: 6,
+    paddingY: 3,
     fontSize: "sm",
+    lineHeight: 1.1,
     fontWeight: "bold",
     borderRadius: "full",
     backgroundColor: "neutralMicroContrast",
@@ -31,19 +35,42 @@ const buttonVariant = cva({
         backgroundColor: "primary",
       },
       unfollow: {
-        backgroundColor: "neutralMicroContrast",
+        color: "white",
+        backgroundColor: "neutralHighContrast",
       },
       subscribe: {
         backgroundColor: "subscription",
       },
     },
+    isLoading: {
+      true: {
+        paddingRight: 10,
+      },
+    },
   },
 });
 
-export default function Button({ children, intent, onClick }: ButtonProps) {
+const loaderStyle = css({
+  position: "absolute",
+  top: 0,
+  right: 4,
+  bottom: 0,
+  margin: "auto",
+});
+
+export default function Button({
+  children,
+  intent,
+  isLoading,
+  onClick,
+}: ButtonProps) {
   return (
-    <button className={buttonVariant({ intent })} onClick={onClick}>
+    <button
+      className={buttonVariant({ intent, isLoading })}
+      onClick={onClick}
+      disabled={isLoading}>
       {children}
+      {isLoading && <Loader className={loaderStyle} />}
     </button>
   );
 }
