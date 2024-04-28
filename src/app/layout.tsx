@@ -1,6 +1,7 @@
 import { Source_Sans_3, Merriweather } from "next/font/google";
 
 import "./globals.css";
+import { css } from "styled-system/css";
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${sourceSans.className} ${sourceSans.variable} ${merriweather.variable}`}>
+        className={`${css({ color: "neutralHighContrast" })} ${sourceSans.className} ${sourceSans.variable} ${merriweather.variable}`}>
         {children}
       </body>
     </html>

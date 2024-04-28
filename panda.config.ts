@@ -12,7 +12,7 @@ export default defineConfig({
           primary: { value: "#B00005" },
           subscription: { value: "#FAEC70" },
           neutralMicroContrast: { value: "#F4F4F4" },
-          neutralHighContrast: { value: "#FAEC70" },
+          neutralHighContrast: { value: "#212121" },
           white: { value: "#FFFFFF" },
         },
       },
